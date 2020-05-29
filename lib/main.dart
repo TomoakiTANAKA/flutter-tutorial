@@ -4,6 +4,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:startup_namer/title_section.dart';
+import 'package:startup_namer/button_section.dart';
+import 'package:startup_namer/text_section.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,6 +30,10 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
+    Widget titleSection = TitleSection();
+    Widget buttonSection = ButtonSection();
+    Widget textSection = TextSection();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Startup Name Generator'),
@@ -37,7 +44,22 @@ class RandomWordsState extends State<RandomWords> {
           )
         ],
       ),
-      body: _buildSuggestions(),
+      body: Column(
+        children: [
+          titleSection,
+          buttonSection,
+          textSection,
+          Text('hoge'),
+//          _buildSuggestions(),
+//          _buildSuggestions(),
+        ],
+      ),
+//      body: Column(
+//        children: [
+//          titleSection,
+//          _buildSuggestions(),
+//        ]
+//      ),
     );
   }
 
@@ -116,3 +138,5 @@ class RandomWords extends StatefulWidget {
   @override
   RandomWordsState createState() => RandomWordsState();
 }
+
+
