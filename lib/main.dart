@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:startup_namer/src/ui/common/list_article.dart';
 
 void main() => runApp(MyApp());
 
@@ -100,11 +101,15 @@ class RandomWordsState extends State<RandomWords> {
             tiles: tiles,
           ).toList();
 
+          final Widget listArticle = ListArticle();
+          final List<Widget> lists = [listArticle, listArticle, listArticle].toList();
+
           return Scaffold(
             appBar: AppBar(
               title: Text('Saved Suggestions'),
             ),
-            body: ListView(children: divided),
+            body: ListView(children: lists),
+//            body: ListView(children: divided),
           );
         },
       ),
