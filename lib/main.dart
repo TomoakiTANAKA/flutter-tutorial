@@ -4,11 +4,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/rendering.dart';
 import 'package:startup_namer/title_section.dart';
 import 'package:startup_namer/button_section.dart';
 import 'package:startup_namer/text_section.dart';
 
-void main() => runApp(MyApp());
+import 'components/app.dart';
+
+void main() => runApp(createMaterialApp());
+
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -104,7 +109,7 @@ class RandomWordsState extends State<RandomWords> {
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
           final Iterable<ListTile> tiles = _saved.map(
-            (WordPair pair) {
+                (WordPair pair) {
               return ListTile(
                 title: Text(
                   pair.asPascalCase,
