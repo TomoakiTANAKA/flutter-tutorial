@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'signup/signup.dart';
 
 import 'home/home.dart';
+import 'home/home_not_logged_in.dart';
 import 'login/login.dart';
 import 'splash/splash.dart';
 import 'bookmark/bookmark.dart';
@@ -11,10 +13,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigation with Routes',
-      home: MyStatefulWidget(),
+//      home: MyStatefulWidget(),
+      home: HomeNotLoggedIn(),
       routes: <String, WidgetBuilder>{
 //        '/': (_) => new Splash(), // homeプロパティを使うときは使えない
         '/login': (_) => new Login(),
+        '/signup': (_) => new SignUp(),
         '/home': (_) => new Home(),
         '/bookmark': (_) => new Bookmark(),
       },
