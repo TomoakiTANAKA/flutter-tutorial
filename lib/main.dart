@@ -44,22 +44,19 @@ class RandomWordsState extends State<RandomWords> {
           )
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
+          Image.asset(
+            'images/lake.jpg',
+            width: 600,
+            height: 240,
+            fit: BoxFit.cover,
+          ),
           titleSection,
           buttonSection,
           textSection,
-          Text('hoge'),
-//          _buildSuggestions(),
-//          _buildSuggestions(),
         ],
       ),
-//      body: Column(
-//        children: [
-//          titleSection,
-//          _buildSuggestions(),
-//        ]
-//      ),
     );
   }
 
