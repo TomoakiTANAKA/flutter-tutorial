@@ -11,7 +11,7 @@ import 'package:startup_namer/text_section.dart';
 
 import 'components/app.dart';
 
-void main() => runApp(createMaterialApp());
+void main() => runApp(App());
 
 
 
