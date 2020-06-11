@@ -8,6 +8,7 @@ class Article extends StatefulWidget {
 }
 
 class _ArticleState extends State<Article> {
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -17,6 +18,8 @@ class _ArticleState extends State<Article> {
       body: SafeArea(
         child: WebView(
           initialUrl: 'https://cojicaji.jp',
+          // javascriptの有効化
+          javascriptMode: JavascriptMode.unrestricted,
         ),
       ), // body
     );
