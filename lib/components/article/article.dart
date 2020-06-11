@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class Article extends StatefulWidget {
   @override
@@ -13,16 +14,10 @@ class _ArticleState extends State<Article> {
       appBar: new AppBar(
         title: const Text("記事のタイトル"),
       ),
-      body: new Center(
-        child: new Column(
-          children: <Widget>[
-            const SizedBox(height: 24.0),
-            new RaisedButton(
-              child: const Text("Launch Article Screen"),
-            ),
-            const SizedBox(height: 24.0),
-          ],
-        )
+      body: SafeArea(
+        child: WebView(
+          initialUrl: 'https://cojicaji.jp',
+        ),
       ), // body
     );
   }
