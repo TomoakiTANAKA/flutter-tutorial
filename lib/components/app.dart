@@ -6,6 +6,7 @@ import 'home/home.dart';
 import 'home/home_not_logged_in.dart';
 import 'login/login.dart';
 import 'splash/splash.dart';
+import 'article/article.dart';
 import 'bookmark/bookmark.dart';
 
 class App extends StatelessWidget {
@@ -13,19 +14,19 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigation with Routes',
-//      home: MyStatefulWidget(),
-      home: HomeNotLoggedIn(),
+      initialRoute: '/',
+//      home: MyStatefulWidget(), // @todo: ログインしているかどうかで分岐させる
       routes: <String, WidgetBuilder>{
-//        '/': (_) => new Splash(), // homeプロパティを使うときは使えない
+        '/': (_) => new Splash(), // homeプロパティを使うときは使えない
+        'not_logged_in': (_) => new HomeNotLoggedIn(),
         '/login': (_) => new Login(),
         '/signup': (_) => new SignUp(),
+        '/article': (_) => new Article(),
         '/home': (_) => new Home(),
-        '/bookmark': (_) => new Bookmark(),
       },
     );
   }
 }
-
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
@@ -74,7 +75,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               return CupertinoPageScaffold(
                 // 表示したい画面のWidget
                 child: SafeArea(
-                  child: Home()
+                    child: Home()
                 ),
               );
             });

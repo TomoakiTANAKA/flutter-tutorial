@@ -33,7 +33,12 @@ class _SplashState extends State<Splash> {
 
   void handleTimeout() {
     // ログイン画面へ
-    Navigator.of(context).pushReplacementNamed("/login");
+    var loggedIn = true;
+    if(loggedIn) {
+      Navigator.of(context).pushReplacementNamed("/home");
+    } else {
+      Navigator.of(context).pushReplacementNamed("/not_logged_in");
+    }
   }
 }
 

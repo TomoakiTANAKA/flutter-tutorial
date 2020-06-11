@@ -1,7 +1,3 @@
-
-// ---------
-// ホーム画面
-// ---------
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +10,9 @@ class Home extends StatelessWidget {
       ),
       body: new Center(
         child: new RaisedButton(
-          child: const Text("Launch Next Screen"),
+          child: const Text("Open Article. Click here."),
           onPressed: () {
-            // その他の画面へ
-            Navigator.of(context).pushNamed("/bookmark");
+            Navigator.of(context).pushReplacementNamed('/article');
           },
         ),
       ),
